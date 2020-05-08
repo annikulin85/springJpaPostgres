@@ -2,7 +2,6 @@ package com.firstPractice.springJpaPostgres;
 
 import com.firstPractice.springJpaPostgres.entity.Address;
 import com.firstPractice.springJpaPostgres.entity.Users;
-import com.firstPractice.springJpaPostgres.service.AddressService;
 import com.firstPractice.springJpaPostgres.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -45,10 +44,10 @@ public class SpringJpaPostgresApplication {
         userService.createUsers(userJon);
         userService.createUsers(userSmith);
 
-        userService.findAll().forEach(it-> System.out.println(it));
-        userService.findAllByName("Smith").forEach(it-> System.out.println(it));
-        userService.findWhereEmailIsGmail().forEach(it-> System.out.println(it));
-        userService.findWhereNameStartsFromSmith().forEach(it-> System.out.println(it));
+        userService.findAll().forEach(System.out::println);
+        userService.findAllByName("Smith").forEach(System.out::println);
+        userService.findWhereEmailIsGmail().forEach(System.out::println);
+        userService.findWhereNameStartsFromSmith().forEach(System.out::println);
 
     }
 
